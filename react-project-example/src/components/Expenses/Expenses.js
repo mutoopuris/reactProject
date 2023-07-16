@@ -5,9 +5,9 @@ import ExpensesFilter from './ExpensesFilter';
 
 import './Expenses.css';
 
-function Expenses(props) {
+const Expenses = (props) => {
     return (
-        <div className="expenses">
+        <Card className="expenses">
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
@@ -28,7 +28,12 @@ function Expenses(props) {
           amount={props.items[3].amount}
           date={props.items[3].date}
         />
-      </div>
+        <ExpenseItem
+          title={props.items[4].title}
+          amount={props.items[4].amount}
+          date={props.items[4].date}
+        />
+      </Card>
     )
 }
 
