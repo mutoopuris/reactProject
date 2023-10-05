@@ -1,8 +1,27 @@
 import React from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
+import User from './User';
 
 const App = () => {
+  let users = [
+    {
+      id:23,
+      name:'Henry',
+      place:'USA'
+    },
+    {
+      id:26,
+      name:'Vamshi',
+      place:'Hyderabad'
+    },
+    {
+      id:27,
+      name:'Bentley',
+      place:'London'
+    }
+];
+
   const expenses = [
     {
       id: 'e1',
@@ -32,7 +51,13 @@ const App = () => {
   ];
   return (
     <div>
-     
+      {
+        users.map(
+          (item)=> {
+            return <User key={item.id} id={item.id} name={item.name} place={item.place} />
+          }
+      )
+    }
       <NewExpense />
       <Expenses items = {expenses}/>
     </div>
